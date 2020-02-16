@@ -10,10 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var horizontalCollection: UICollectionView!
-    @IBOutlet var verticalCollection: UICollectionView!
+    @IBOutlet var fiveDaysForThreeHoursWeather: UICollectionView!
+    @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var temperatureLabel: UILabel!
     
     private let reuseIdentifier = "horizontalCell"
+    private let jsonUrl = "https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=4d24cbf9d70b0c3cedc62cc36c70ec13"
+    
+    //private var weatherProperty: WeatherProperty
+    
+    func getTemp() {
+        guard let url = URL(string: jsonUrl) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data else { return }
+            
+            do {
+                let weatherProperty = try JSONDecoder().decode(WeatherProperty.self, from: data)
+                DispatchQueue.main.async {
+                    
+                    let tempCelsius = fahrenheitInCelsius(fahrenheitTemp: (weatherProperty.main!.temp))
+                    
+                    self.temperatureLabel.text = ("\(NSString(format:"%.f", tempCelsius)) °C")
+                    self.cityLabel.text = weatherProperty.name
+                    self.weatherLabel.text = weatherProperty.weather![0].description
+                    
+                    self.view.reloadInputViews()
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }.resume()
+    }
     
     var temperatures: [TempData] = {
         var firstTemp = TempData()
@@ -42,19 +71,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        horizontalCollection.dataSource = self
-        horizontalCollection.delegate = self
+        fiveDaysForThreeHoursWeather.dataSource = self
+        fiveDaysForThreeHoursWeather.delegate = self
+        
+        getTemp()
     }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(temperatures.count)
         return temperatures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let tempCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HorizontalCollectionViewCell {
+        if let tempCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? FiveDaysTempCollectionViewCell {
             
             tempCell.temp = temperatures[indexPath.row]
             

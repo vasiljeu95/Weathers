@@ -8,14 +8,14 @@
 
 import UIKit
 
-class HorizontalCollectionViewCell: UICollectionViewCell {
+class FiveDaysTempCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var tempImageView: UIImageView!
-    @IBOutlet var horizontalLabel: UILabel!
+    @IBOutlet var fiveDaysTempLabel: UILabel!
     
     var temp: TempData? {
         didSet {
-            horizontalLabel.text = temp?.temperature
+            fiveDaysTempLabel.text = temp?.temperature
             
             if let image = temp?.imageTemp {
                 tempImageView.image = UIImage(named: image)
