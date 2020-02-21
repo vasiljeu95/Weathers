@@ -10,5 +10,6 @@ import Foundation
 
 struct TempData {
     var temperature: String?
+    var city: String?
     var imageTemp: String?
 }
