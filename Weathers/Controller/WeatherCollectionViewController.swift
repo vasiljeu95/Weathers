@@ -18,6 +18,11 @@ class WeatherCollectionViewController: UICollectionViewController {
         cities = StorageManager.shared.fetchCitiesFromFile()
         collectionView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView!.reloadData()
+    }
 
     // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

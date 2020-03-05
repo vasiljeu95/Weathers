@@ -58,7 +58,6 @@
 		E3A4CCA723F955A900881A82 = {
 			isa = PBXGroup;
 			children = (
-				E38E39332410611500B20B39 /* StorageManager.swift */,
 				E3A4CCB223F955A900881A82 /* Weathers */,
 				E3A4CCB123F955A900881A82 /* Products */,
 			);
@@ -104,6 +103,7 @@
 				E34AE5C123FF442C0084B231 /* WeatherCities.swift */,
 				E394BD3423F9F47800A445FE /* WeatherCityJSONData.swift */,
 				E3570E1A23FA081400F1F174 /* Functions.swift */,
+				E38E39332410611500B20B39 /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

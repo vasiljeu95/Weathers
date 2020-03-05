@@ -18,6 +18,9 @@ class CitiesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Cities list"
+//        // Set large title - возникают проблеммы в отображением коллекции и значений во вью контроллерах городов
+//        navigationController?.navigationBar.prefersLargeTitles = true
         // Restore from Plist
         cities = StorageManager.shared.fetchCitiesFromFile()
     }
@@ -56,21 +59,25 @@ extension CitiesTableViewController {
             message: "Please write the city name",
             preferredStyle: .alert)
         
-        let okAction = UIAlertAction(
+        let saveAction = UIAlertAction(
             title: "Save",
             style: .default) { (action) in
-                let textField = alert.textFields![0]
-                self.cities.weatherCitiesArray.append(textField.text ?? "Unknown")
+                guard let textField = alert.textFields?.first?.text, !textField.isEmpty else {
+                    print("The text field is empty")
+                    return
+                }
+                self.cities.weatherCitiesArray.append(textField)
                 StorageManager.shared.saveCitiesToFile(self.cities)
-                self.tableView.reloadData()
+                let cellIndex = IndexPath(row: self.cities.weatherCitiesArray.count - 1, section: 0)
+                self.tableView.insertRows(at: [cellIndex], with: .automatic)
         }
         
         let cancelAction = UIAlertAction(
             title: "Cancel",
-            style: .cancel,
+            style: .destructive,
             handler: nil)
         
-        alert.addAction(okAction)
+        alert.addAction(saveAction)
         alert.addAction(cancelAction)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter your cities name"
