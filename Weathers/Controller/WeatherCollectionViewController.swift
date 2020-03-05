@@ -10,29 +10,31 @@ import UIKit
 
 class WeatherCollectionViewController: UICollectionViewController {
 
-    private let weathersCities = WeatherCities.weatherCitiesArray
+    private var cities: WeatherCities!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Restore from Plist
+        cities = StorageManager.shared.fetchCitiesFromFile()
+        collectionView.reloadData()
+    }
 
     // MARK: - UICollectionViewDataSource
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return weathersCities.count
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return weathersCities[section].weatherDataArray.count
+        return cities.weatherCitiesArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCell", for: indexPath) as! WeatherCollectionViewCell
     
-        cell.cityLabel.text = weathersCities[indexPath.section].weatherDataArray[indexPath.row]
+        cell.cityLabel.text = cities.weatherCitiesArray[indexPath.row]
     
         return cell
     }
 
     // MARK: - UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weatherCity = weathersCities[indexPath.section].weatherDataArray[indexPath.row]
+        let weatherCity = cities.weatherCitiesArray[indexPath.row]
         performSegue(withIdentifier: "showWeather", sender: weatherCity)
     }
     
@@ -44,6 +46,12 @@ class WeatherCollectionViewController: UICollectionViewController {
             weatherVC.weatherDataSender = sender as? String
         }
     }
+    
+//    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+//        let _ = segue.source as! CitiesTableViewController
+//        collectionView.reloadData()
+//    }
+
 }
 
 extension WeatherCollectionViewController: UICollectionViewDelegateFlowLayout {

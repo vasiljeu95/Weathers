@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E347571C24104B9400B705F2 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347571B24104B9400B705F2 /* CitiesTableViewController.swift */; };
 		E34AE5C223FF442C0084B231 /* WeatherCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AE5C123FF442C0084B231 /* WeatherCities.swift */; };
-		E34AE5C423FF44D00084B231 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34AE5C323FF44D00084B231 /* WeatherData.swift */; };
 		E3570E1B23FA081400F1F174 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3570E1A23FA081400F1F174 /* Functions.swift */; };
 		E3570E1D23FB129F00F1F174 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = E3570E1C23FB129E00F1F174 /* city.list.json */; };
 		E37DEFB823FF384900FB1133 /* WeatherCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DEFB723FF384900FB1133 /* WeatherCollectionViewController.swift */; };
 		E37DEFBA23FF38FC00FB1133 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DEFB923FF38FC00FB1133 /* WeatherCollectionViewCell.swift */; };
 		E37DEFBC23FF3C7C00FB1133 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DEFBB23FF3C7C00FB1133 /* WeatherViewController.swift */; };
+		E38E39342410611500B20B39 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38E39332410611500B20B39 /* StorageManager.swift */; };
 		E394BD3523F9F47800A445FE /* WeatherCityJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394BD3423F9F47800A445FE /* WeatherCityJSONData.swift */; };
 		E3A4CCB423F955A900881A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4CCB323F955A900881A82 /* AppDelegate.swift */; };
 		E3A4CCB623F955A900881A82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4CCB523F955A900881A82 /* SceneDelegate.swift */; };
@@ -24,13 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E347571B24104B9400B705F2 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		E34AE5C123FF442C0084B231 /* WeatherCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCities.swift; sourceTree = "<group>"; };
-		E34AE5C323FF44D00084B231 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		E3570E1A23FA081400F1F174 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E3570E1C23FB129E00F1F174 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = city.list.json; path = ../../../../../../Downloads/city.list.json; sourceTree = "<group>"; };
 		E37DEFB723FF384900FB1133 /* WeatherCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewController.swift; sourceTree = "<group>"; };
 		E37DEFB923FF38FC00FB1133 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		E37DEFBB23FF3C7C00FB1133 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = Weathers/View/WeatherViewController.swift; sourceTree = SOURCE_ROOT; };
+		E38E39332410611500B20B39 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E394BD3423F9F47800A445FE /* WeatherCityJSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityJSONData.swift; sourceTree = "<group>"; };
 		E3A4CCB023F955A900881A82 /* Weathers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weathers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4CCB323F955A900881A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		E3A4CCA723F955A900881A82 = {
 			isa = PBXGroup;
 			children = (
+				E38E39332410611500B20B39 /* StorageManager.swift */,
 				E3A4CCB223F955A900881A82 /* Weathers */,
 				E3A4CCB123F955A900881A82 /* Products */,
 			);
@@ -99,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				E34AE5C123FF442C0084B231 /* WeatherCities.swift */,
-				E34AE5C323FF44D00084B231 /* WeatherData.swift */,
 				E394BD3423F9F47800A445FE /* WeatherCityJSONData.swift */,
 				E3570E1A23FA081400F1F174 /* Functions.swift */,
 			);
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E37DEFB723FF384900FB1133 /* WeatherCollectionViewController.swift */,
+				E347571B24104B9400B705F2 /* CitiesTableViewController.swift */,
 				E37DEFBB23FF3C7C00FB1133 /* WeatherViewController.swift */,
 			);
 			path = Controller;
@@ -196,14 +199,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37DEFBC23FF3C7C00FB1133 /* WeatherViewController.swift in Sources */,
-				E34AE5C423FF44D00084B231 /* WeatherData.swift in Sources */,
 				E37DEFBA23FF38FC00FB1133 /* WeatherCollectionViewCell.swift in Sources */,
+				E38E39342410611500B20B39 /* StorageManager.swift in Sources */,
 				E394BD3523F9F47800A445FE /* WeatherCityJSONData.swift in Sources */,
 				E34AE5C223FF442C0084B231 /* WeatherCities.swift in Sources */,
 				E37DEFB823FF384900FB1133 /* WeatherCollectionViewController.swift in Sources */,
 				E3A4CCB423F955A900881A82 /* AppDelegate.swift in Sources */,
 				E3570E1B23FA081400F1F174 /* Functions.swift in Sources */,
 				E3E0F0762400248400408068 /* Animation.swift in Sources */,
+				E347571C24104B9400B705F2 /* CitiesTableViewController.swift in Sources */,
 				E3A4CCB623F955A900881A82 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

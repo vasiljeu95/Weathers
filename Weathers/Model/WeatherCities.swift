@@ -8,7 +8,6 @@
 
 import Foundation
 
-class WeatherCities {
-    
-    static let weatherCitiesArray = [WeatherData(weatherData: ["Minsk", "Moscow", "London", "Cairo", "Dallas", "Boston", "Washington", "Chicago", "Houston", "Kiev", "Lviv"])]
+struct WeatherCities: Encodable, Decodable {
+    var weatherCitiesArray = ["Minsk", "Moscow", "London", "Cairo", "Dallas", "Boston", "Washington", "Chicago", "Houston", "Kiev", "Lviv"]
 }
