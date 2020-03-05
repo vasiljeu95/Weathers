@@ -1,13 +1,12 @@
 # Weathers
 
 ### 1. Краткое описание
-## Приложение помогающее в выборе одежды под различные погодные условия, погодные данные можно определять исходя из введённых городов или географических координат.
-## Используемое API для получения погодных данных: OpenWeatherMap.
-## Стек основных используемых технологий: REST API, URLSession, UserDefaults, MVC.
+Приложение помогающее в выборе одежды под различные погодные условия, погодные данные можно определять исходя из введённых городов или географических координат.
+Используемое API для получения погодных данных: OpenWeatherMap.
+Стек основных используемых технологий: REST API, URLSession, UserDefaults, MVC.
 
 Стартовый экран: 
-![alt text](https://sun9-47.userapi.com/c855720/v855720673/2029f5/ar0BPTC04yg.jpg "Logo Title Text 1")
-https://sun9-56.userapi.com/c855720/v855720673/202a19/jITqQdU_wTc.jpg
+![alt text](https://sun9-47.userapi.com/c855720/v855720673/2029f5/ar0BPTC04yg.jpg "Logo Title Text 1", https://sun9-56.userapi.com/c855720/v855720673/202a19/jITqQdU_wTc.jpg "Logo Title Text 2",)
 
 ### 2. Пример кода
 
@@ -53,23 +52,8 @@ func getTemp(city: String) {
     }
 ```
 
-### 6. Experience:
-
-* November 2019-November 2019  – Junior iOS developer. SwiftBook online webinar courses.
-Project role: Team Lead, iOS developer.
-Project description: application for learning English (in the development stage) - https://github.com/vasiljeu95/EnglishTestApp
-
-* June 2019-Jule2019 – Junior iOS developer. ALOTEQ
-
-* August 2019-present  – Area Head, Minsk Automobile Plant
-Main responsibilities: monitoring of working capacity of mechanical and power equipment of production.
-
 ### 7. Проблеммы с какими столкнулся:
-
-- SwiftBook online webinar courses
-- Educational Center of HTP “IT- Academy”, Comprehensive course on iOS app development
-- Udemy.com, The Complete iOS 11 & Swift Developer Course - Build 20 Apps
-
-### 8. English: 
-
-Pre-Intermediate
+* Collection Cell не хотел нормально отображаться на эране;
+* Возникали проблеммы при разворачивании данных из JSON-а, приходилось редактировать структуру данных;
+* Были трудности с сохранением данных при редактировании в tableView;
+* Collection не хотел обновляться после изменения данных в моделе. 
